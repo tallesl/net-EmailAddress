@@ -1,22 +1,17 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-namespace EmailAddressValidation.Tests
+﻿namespace EmailAddressValidation.Tests
 {
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+
     [TestClass]
-    public class Tests
+    public class SembianceEmailValidator
     {
+        /// <summary>
+        /// The following were borrowed from Sembiance/email-validator.
+        /// (https://github.com/Sembiance/email-validator/blob/master/test.js)
+        /// </summary>
         [TestMethod]
         public void Valid()
         {
-            // The following are examples from the original code itself (https://msdn.microsoft.com/library/01escwtf%28v=vs.100%29.aspx)
-            Assert.IsTrue(EmailAddressValidator.IsValid("david.jones@proseware.com"));
-            Assert.IsTrue(EmailAddressValidator.IsValid("d.j@server1.proseware.com"));
-            Assert.IsTrue(EmailAddressValidator.IsValid("jones@ms1.proseware.com"));
-            Assert.IsTrue(EmailAddressValidator.IsValid("js#internal@proseware.com"));
-            Assert.IsTrue(EmailAddressValidator.IsValid("j_9@[129.126.118.1]"));
-            Assert.IsTrue(EmailAddressValidator.IsValid("j.s@server1.proseware.com"));
-
-            // The following were borrowed from Sembiance/email-validator (https://github.com/Sembiance/email-validator/blob/master/test.js)
             Assert.IsTrue(EmailAddressValidator.IsValid("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@letters-in-local.org"));
             Assert.IsTrue(EmailAddressValidator.IsValid("01234567890@numbers-in-local.net"));
             Assert.IsTrue(EmailAddressValidator.IsValid("mixed-1234-in-{+^}-local@sld.net"));
@@ -51,17 +46,6 @@ namespace EmailAddressValidation.Tests
         [TestMethod]
         public void Invalid()
         {
-            // The following are examples from the original code itself (https://msdn.microsoft.com/library/01escwtf%28v=vs.100%29.aspx)
-            Assert.IsFalse(EmailAddressValidator.IsValid("j.@server1.proseware.com"));
-            Assert.IsFalse(EmailAddressValidator.IsValid("j..s@proseware.com"));
-            Assert.IsFalse(EmailAddressValidator.IsValid("js*@proseware.com"));
-            Assert.IsFalse(EmailAddressValidator.IsValid("js@proseware..com"));
-
-            // Curiously, there are 2 emails listed as "Invalid" that passes as valid:
-            // • j@proseware.com9
-            // • js@proseware.com9
-
-            // The following were borrowed from Sembiance/email-validator (https://github.com/Sembiance/email-validator/blob/master/test.js)
             Assert.IsFalse(EmailAddressValidator.IsValid("@missing-local.org"));
             Assert.IsFalse(EmailAddressValidator.IsValid("! #$%`|@invalid-characters-in-local.org"));
             Assert.IsFalse(EmailAddressValidator.IsValid("(),:;`|@more-invalid-characters-in-local.org"));

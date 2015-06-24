@@ -46,5 +46,5 @@ Consider that before using it.
 [1]:         http://stackoverflow.com/q/201323
 [2]:         http://regular-expressions.info/email.html
 [3]:         http://haacked.com/archive/2007/08/21/i-knew-how-to-validate-an-email-address-until-i.aspx
-[positives]: https://github.com/tallesl/EmailAddressValidator/blob/master/EmailAddressValidator.Tests/Tests.cs#L84-89
-[negatives]: https://github.com/tallesl/EmailAddressValidator/blob/master/EmailAddressValidator.Tests/Tests.cs#L45-48
+[positives]: https://github.com/tallesl/EmailAddressValidator/blob/master/EmailAddressValidator.Tests/SembianceEmailValidator.cs#L68-73
+[negatives]: https://github.com/tallesl/EmailAddressValidator/blob/master/EmailAddressValidator.Tests/SembianceEmailValidator.cs#L40-43

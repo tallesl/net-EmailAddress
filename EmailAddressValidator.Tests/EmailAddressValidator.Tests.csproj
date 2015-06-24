@@ -45,8 +45,9 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MsdnExample.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tests.cs" />
+    <Compile Include="SembianceEmailValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EmailAddressValidator\EmailAddressValidator.csproj">
