@@ -3,8 +3,8 @@
 [![][build-image]][build]
 [![][nuget-image]][nuget]
 
-[build]:       https://ci.appveyor.com/api/projects/status/github/tallesl/EmailAddressValidator
-[build-image]: https://ci.appveyor.com/project/TallesL/EmailAddressValidator
+[build]:       https://ci.appveyor.com/project/TallesL/EmailAddressValidator
+[build-image]: https://ci.appveyor.com/api/projects/status/github/tallesl/EmailAddressValidator
 
 [nuget]:       http://badge.fury.io/nu/EmailAddressValidator
 [nuget-image]: https://badge.fury.io/nu/EmailAddressValidator.png
