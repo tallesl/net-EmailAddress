@@ -37,6 +37,12 @@
     <Compile Include="EmailAddressValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ReferenceSource\ReferenceSource.csproj">
+      <Project>{34d08284-23e6-47b0-9e34-d73bde0a1d98}</Project>
+      <Name>ReferenceSource</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
