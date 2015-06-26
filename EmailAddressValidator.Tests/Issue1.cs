@@ -2,6 +2,10 @@
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+    /// <summary>
+    /// Examples from issue #1.
+    /// (https://github.com/tallesl/EmailAddressValidator/issues/1)
+    /// </summary>
     [TestClass]
     public class Issue1
     {

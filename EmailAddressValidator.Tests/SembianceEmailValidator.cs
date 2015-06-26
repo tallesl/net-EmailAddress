@@ -2,13 +2,13 @@
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+    /// <summary>
+    /// Examples borrowed from the Sembiance/email-validator repository.
+    /// (https://github.com/Sembiance/email-validator/blob/8794676fb1ad9f5c92799df48744e651c4cdb237/test.js)
+    /// </summary>
     [TestClass]
     public class SembianceEmailValidator
     {
-        /// <summary>
-        /// Examples borrowed from the Sembiance/email-validator repository.
-        /// (https://github.com/Sembiance/email-validator/blob/8794676fb1ad9f5c92799df48744e651c4cdb237/test.js)
-        /// </summary>
         [TestMethod]
         public void ValidFromSebianceEmailValidator()
         {
