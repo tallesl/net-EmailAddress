@@ -27,7 +27,46 @@ It's not *perfect* (and probably no email address validation code will ever be).
 [falsepositive-3]: EmailAddressValidator.Tests/SembianceEmailValidator.cs#L59
 [falsepositive-4]: EmailAddressValidator.Tests/Wikipedia.cs#L44
 
-## Dear Diary
+## Reference Source
+
+The code was borrowed from [Reference Source][Reference Source] with some mild adaptations.
+Here's what I did:
+
+1. Downloaded Reference Source (version 4.5.2)
+1. Copied [MailAddressParser.cs][MailAddressParser.cs] and its dependencies
+ * [DomainLiteralReader.cs][DomainLiteralReader.cs]
+ * [DotAtomReader.cs][DotAtomReader.cs]
+ * [MailAddressParser.cs][MailAddressParser.cs]
+ * [QuotedPairReader.cs][QuotedPairReader.cs]
+ * [QuotedStringFormatReader.cs][QuotedStringFormatReader.cs]
+ * [WhitespaceReader.cs][WhitespaceReader.cs]
+ * [MailBnfHelper.cs][MailBnfHelper.cs] (curiously, this is the only class that isn't in namespace System.Net.Mail)
+1. Adapted the `MailAddressParser` class:
+ * Changed its access to `public`
+ * Changed `MailAddressParser(string data)` to `public`
+ * Removed `ParseMultipleAddresses(string data)`
+ * Changed both `ParseAddress(string data)` and `ParseAddress(string data, bool expectMultipleAddresses, ref int index)` to void
+1. Fixed missing `SR`:
+ * Created a resource named `SR` from [`corefx/src/System.Net.Http/src/Resources/Strings.resx`][Strings.resx]
+ * Replaced `SR.GetString` for `string.Format`
+1. Replaced old [EmailAddressValidator.cs][EmailAddressValidator.cs] code for a call to the new public `EmailAddressParser`
+
+[Reference Source]:            http://referencesource.microsoft.com
+[Downloaded Reference Source]: http://referencesource.microsoft.com/download.html
+
+[MailAddressParser.cs]:        http://referencesource.microsoft.com/#System/net/System/Net/mail/MailAddressParser.cs
+[DomainLiteralReader.cs]:      http://referencesource.microsoft.com/#System/net/System/Net/mail/DomainLiteralReader.cs
+[DotAtomReader.cs]:            http://referencesource.microsoft.com/#System/net/System/Net/mail/DotAtomReader.cs
+[MailAddressParser.cs]:        http://referencesource.microsoft.com/#System/net/System/Net/mail/MailAddressParser.cs
+[QuotedPairReader.cs]:         http://referencesource.microsoft.com/#System/net/System/Net/mail/QuotedPairReader.cs
+[QuotedStringFormatReader.cs]: http://referencesource.microsoft.com/#System/net/System/Net/mail/QuotedStringFormatReader.cs
+[WhitespaceReader.cs]:         http://referencesource.microsoft.com/#System/net/System/Net/mail/WhitespaceReader.cs
+[MailBnfHelper.cs]:            http://referencesource.microsoft.com/#System/net/System/Net/mail/MailBnfHelper.cs
+[Strings.resx]:                https://github.com/dotnet/corefx/blob/master/src/System.Net.Http/src/Resources/Strings.resx
+
+[EmailAddressValidator.cs]: EmailAddressValidator/EmailAddressValidator.cs
+
+## *Dear Diary*
 
 ### No <del>soup</del> package for you
 
@@ -106,7 +145,7 @@ Wait a second.
 [MailAddress][MailAddress] does this already (throws when it's invalid).
 I even forgot that [I've grumbled about it before on my blog][blog].
 
-Ah, [open source][referencesource] is a beautiful thing.
+Ah, [open source][open source] is a beautiful thing.
 There's an internal class called [MailAddressParser][MailAddressParser] just for that.
 Let's borrow it.
 
@@ -117,6 +156,14 @@ It's bad from the *optmization* side, since exception handling is not very perfo
 
 But that's just me being picky.
 [Version 2.0][2.0], done.
+
+[#1]:                https://github.com/tallesl/EmailAddressValidator/issues/1
+[MailAddress]:       https://msdn.microsoft.com/library/system.net.mail.mailaddress.aspx
+[blog]:              https://blog.talles.me/just-put-it-in-the-framework.html
+[open source]:       http://referencesource.microsoft.com
+[MailAddressParser]: http://referencesource.microsoft.com/#System/net/System/Net/mail/MailAddressParser.cs
+[FormatException]:   https://msdn.microsoft.com/library/system.formatexception.aspx
+[2.0]:               https://github.com/tallesl/EmailAddressValidator/releases/tag/2.0.0
 
 ### Wait a second
 
@@ -131,11 +178,3 @@ Here are some possible reasons, but I'm not trying to convince anyone:
 * If you aren't going to use MailAddress, it makes your intention clearer;
 * It doesn't rely on System.Net.Mail, just System (but I don't know when this is ever useful);
 * Hey, it's community code™ (if you can call such humble repository a *community*).
-
-[#1]:                https://github.com/tallesl/EmailAddressValidator/issues/1
-[MailAddress]:       https://msdn.microsoft.com/library/system.net.mail.mailaddress.aspx
-[blog]:              https://blog.talles.me/just-put-it-in-the-framework.html
-[referencesource]:   http://referencesource.microsoft.com
-[MailAddressParser]: http://referencesource.microsoft.com/#System/net/System/Net/mail/MailAddressParser.cs
-[FormatException]:   https://msdn.microsoft.com/library/system.formatexception.aspx
-[2.0]:               https://github.com/tallesl/EmailAddressValidator/releases/tag/2.0.0
