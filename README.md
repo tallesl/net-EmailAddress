@@ -3,12 +3,6 @@
 [![][build-img]][build]
 [![][nuget-img]][nuget]
 
-[build]:     https://ci.appveyor.com/project/TallesL/EmailAddressValidator
-[build-img]: https://ci.appveyor.com/api/projects/status/github/tallesl/EmailAddressValidator
-
-[nuget]:     http://badge.fury.io/nu/EmailAddressValidator
-[nuget-img]: https://badge.fury.io/nu/EmailAddressValidator.png
-
 ```cs
 using EmailAddressValidation;
 
@@ -16,31 +10,39 @@ EmailAddressValidator.IsValid("no email for you"); // false
 EmailAddressValidator.isValid("foo@bar.com");      // true
 ```
 
+[build]:     https://ci.appveyor.com/project/TallesL/EmailAddressValidator
+[build-img]: https://ci.appveyor.com/api/projects/status/github/tallesl/EmailAddressValidator
+
+[nuget]:     http://badge.fury.io/nu/EmailAddressValidator
+[nuget-img]: https://badge.fury.io/nu/EmailAddressValidator.png
+
 ## Word of warning
 
-It's not *perfect* (and probably no email address validation code will ever be). Here are some false positives ([1][falsepositive-1] [2][falsepositive-2] [3][falsepositive-3] [4][falsepositive-4]) and negatives ([1][falsenegative]).
+It's not *perfect* (and probably no email address validation code will ever be).
+Here are some false positives ([1][falsepositive-1] [2][falsepositive-2] [3][falsepositive-3] [4][falsepositive-4] [5][falsepositive-5]) and negatives ([1][falsenegative]).
 
-[falsenegative]: EmailAddressValidator.Tests/CodeFool.cs#L46
+[falsepositive-1]: EmailAddressValidator.Tests/CodeFool.cs#L56-L66
+[falsepositive-2]: EmailAddressValidator.Tests/Issue2.cs#L15-L21
+[falsepositive-3]: EmailAddressValidator.Tests/Msdn.cs#L30-L33
+[falsepositive-4]: EmailAddressValidator.Tests/SembianceEmailValidator.cs#L61-L74
+[falsepositive-5]: EmailAddressValidator.Tests/Wikipedia.cs#L46-L49
 
-[falsepositive-1]: EmailAddressValidator.Tests/CodeFool.cs#L54
-[falsepositive-2]: EmailAddressValidator.Tests/Msdn.cs#L28
-[falsepositive-3]: EmailAddressValidator.Tests/SembianceEmailValidator.cs#L59
-[falsepositive-4]: EmailAddressValidator.Tests/Wikipedia.cs#L44
+[falsenegative]: EmailAddressValidator.Tests/CodeFool.cs#L48-L50
 
 ## Reference Source
 
-The code was borrowed from [Reference Source][Reference Source] with some mild adaptations.
+The code was borrowed from [Reference Source] with some mild adaptations.
 Here's what I did:
 
-1. Downloaded Reference Source (version 4.5.2)
-1. Copied [MailAddressParser.cs][MailAddressParser.cs] and its dependencies
- * [DomainLiteralReader.cs][DomainLiteralReader.cs]
- * [DotAtomReader.cs][DotAtomReader.cs]
- * [MailAddressParser.cs][MailAddressParser.cs]
- * [QuotedPairReader.cs][QuotedPairReader.cs]
- * [QuotedStringFormatReader.cs][QuotedStringFormatReader.cs]
- * [WhitespaceReader.cs][WhitespaceReader.cs]
- * [MailBnfHelper.cs][MailBnfHelper.cs] (curiously, this is the only class that isn't in namespace System.Net.Mail)
+1. [Downloaded Reference Source]&nbsp;(version 4.5.2)
+1. Copied [MailAddressParser.cs] and its dependencies
+ * [DomainLiteralReader.cs]
+ * [DotAtomReader.cs]
+ * [MailAddressParser.cs]
+ * [QuotedPairReader.cs]
+ * [QuotedStringFormatReader.cs]
+ * [WhitespaceReader.cs]
+ * [MailBnfHelper.cs]&nbsp;(curiously, this is the only class that isn't in namespace System.Net.Mail)
 1. Adapted the `MailAddressParser` class:
  * Changed its access to `public`
  * Changed `MailAddressParser(string data)` to `public`
@@ -49,7 +51,7 @@ Here's what I did:
 1. Fixed missing `SR`:
  * Created a resource named `SR` from [`corefx/src/System.Net.Http/src/Resources/Strings.resx`][Strings.resx]
  * Replaced `SR.GetString` for `string.Format`
-1. Replaced old [EmailAddressValidator.cs][EmailAddressValidator.cs] code for a call to the new public `EmailAddressParser`
+1. Replaced old [EmailAddressValidator.cs] code for a call to the new public `EmailAddressParser`
 
 [Reference Source]:            http://referencesource.microsoft.com
 [Downloaded Reference Source]: http://referencesource.microsoft.com/download.html
