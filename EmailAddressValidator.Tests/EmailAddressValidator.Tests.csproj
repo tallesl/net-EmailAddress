@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CodeFool.cs" />
+    <Compile Include="Issue2.cs" />
     <Compile Include="Issue1.cs" />
     <Compile Include="Msdn.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
