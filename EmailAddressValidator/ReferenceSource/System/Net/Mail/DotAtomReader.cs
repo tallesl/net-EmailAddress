@@ -9,10 +9,9 @@ using System.Diagnostics;
 using System.Net.Mime;
 using System.Text;
 
-namespace ReferenceSource.System.Net.Mail
+namespace EmailAddressValidation.ReferenceSource.System.Net.Mail
 {
-    using ReferenceSource.Properties;
-    using ReferenceSource.System.Net.Mime;
+    using EmailAddressValidation.ReferenceSource.System.Net.Mime;
 
     //
     // RFC 2822 Section 3.2.4 - Atom, Dot-Atom

@@ -11,10 +11,8 @@ using System.Globalization;
 using System.Collections.Generic;
 using System.Diagnostics;
 
-namespace ReferenceSource.System.Net.Mime
+namespace EmailAddressValidation.ReferenceSource.System.Net.Mime
 {
-    using ReferenceSource.Properties;
-
     internal static class MailBnfHelper
     {
         // characters allowed in atoms

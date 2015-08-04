@@ -12,10 +12,9 @@ using System.Collections;
 using System.Diagnostics;
 using System.Collections.Generic;
 
-namespace ReferenceSource.System.Net.Mail
+namespace EmailAddressValidation.ReferenceSource.System.Net.Mail
 {
-    using ReferenceSource.Properties;
-    using ReferenceSource.System.Net.Mime;
+    using EmailAddressValidation.ReferenceSource.System.Net.Mime;
 
     //
     // This class is responsible for parsing E-mail addresses as described in RFC 2822.
