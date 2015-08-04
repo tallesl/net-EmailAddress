@@ -5,16 +5,19 @@
 
     public static class EmailAddressValidator
     {
-        public static bool IsValid(string address)
+        public static class ReferenceSource
         {
-            try
+            public static bool IsValid(string address)
             {
-                MailAddressParser.ParseAddress(address);
-                return true;
-            }
-            catch (FormatException)
-            {
-                return false;
+                try
+                {
+                    MailAddressParser.ParseAddress(address);
+                    return true;
+                }
+                catch (FormatException)
+                {
+                    return false;
+                }
             }
         }
     }
