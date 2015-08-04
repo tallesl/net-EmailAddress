@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailAddressValidator", "EmailAddressValidator\EmailAddressValidator.csproj", "{8A19FB26-024C-408E-BAAA-F0102AA8E529}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library", "Library\Library.csproj", "{8A19FB26-024C-408E-BAAA-F0102AA8E529}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailAddressValidator.Tests", "EmailAddressValidator.Tests\EmailAddressValidator.Tests.csproj", "{6185453E-EAC3-49EC-9BB0-25ACD9205E6F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{6185453E-EAC3-49EC-9BB0-25ACD9205E6F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -54,9 +54,9 @@
     <Compile Include="Wikipedia.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EmailAddressValidator\EmailAddressValidator.csproj">
+    <ProjectReference Include="..\Library\Library.csproj">
       <Project>{8A19FB26-024C-408E-BAAA-F0102AA8E529}</Project>
-      <Name>EmailAddressValidator</Name>
+      <Name>Library</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
