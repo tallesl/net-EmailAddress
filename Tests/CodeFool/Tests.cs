@@ -1,16 +1,49 @@
-﻿namespace EmailAddressValidation.Tests
+﻿namespace EmailAddressValidation.Tests.CodeFool
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]
-    public partial class ReferenceSource
+    public partial class Tests
     {
         [TestMethod]
-        public void ValidFromCodeFool()
+        public void MsdnWithCodeFool()
+        {
+            CustomAssert.IsTrue(
+                EmailAddressValidator.Msdn.IsValid,
+                Examples.Valid,
+
+                // False negatives:
+                new[]
+                {
+                    @"_______@example.com",
+                    @"much.“more\ unusual”@example.com",
+                    @"very.unusual.“@”.unusual.com@example.com",
+                    @"very.“(),:;<>[]”.VERY.“very@\ ""very”.unusual@strange.example.com",
+                    @"“email”@example.com",
+                }
+
+            );
+
+            CustomAssert.IsFalse(
+                EmailAddressValidator.Msdn.IsValid,
+                Examples.Invalid,
+
+                // False positives:
+                new[]
+                {
+                    @"email@111.222.333.44444",
+                    @"email@example.web",
+                }
+
+            );
+        }
+
+        [TestMethod]
+        public void ReferenceSourceWithCodeFool()
         {
             CustomAssert.IsTrue(                
                 EmailAddressValidator.ReferenceSource.IsValid,
-                Examples.CodeFool.Valid,
+                Examples.Valid,
 
                 // False negatives:
                 new[]
@@ -21,14 +54,10 @@
                 }
 
             );
-        }
 
-        [TestMethod]
-        public void InvalidFromCodeFool()
-        {
             CustomAssert.IsFalse(
                 EmailAddressValidator.ReferenceSource.IsValid,
-                Examples.CodeFool.Invalid,
+                Examples.Invalid,
                 
                 // False positives:
                 new[]
