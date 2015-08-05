@@ -20,7 +20,7 @@
                     @"""very.unusual.@.unusual.com""@example.com",
                     @"#!$%&'*+-/=?^_`{}|~@example.org",
                     @"a.little.lengthy.but.fine@dept.example.com",
-                    @"admin@mailserver1 (local domain name with no TLD)",
+                    @"admin@mailserver1",
                     @"disposable.style.email.with+symbol@example.com",
                     @"niceandsimple@example.com",
                     @"other.email-with-dash@example.com",

@@ -45,6 +45,9 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Msdn\CodeFool.cs" />
+    <Compile Include="Msdn\SembianceEmailValidator.cs" />
+    <Compile Include="Msdn\Wikipedia.cs" />
     <Compile Include="ReferenceSource\CodeFool.cs" />
     <Compile Include="CustomAssert.cs" />
     <Compile Include="Examples\Wikipedia.cs" />
