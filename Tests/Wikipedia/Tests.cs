@@ -26,7 +26,10 @@
 
             );
 
-            CustomAssert.IsFalse(EmailAddressValidator.Msdn.IsValid, Examples.Invalid);
+            CustomAssert.IsFalse(
+                EmailAddressValidator.Msdn.IsValid,
+                Examples.Invalid
+            );
         }
 
         [TestMethod]
@@ -80,7 +83,10 @@
 
             );
 
-            CustomAssert.IsFalse(EmailAddressValidator.Haacked.IsValid, Examples.Invalid);
+            CustomAssert.IsFalse(
+                EmailAddressValidator.Haacked.IsValid,
+                Examples.Invalid
+            );
         }
     }
 }
