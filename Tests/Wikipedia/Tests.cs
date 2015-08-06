@@ -60,5 +60,27 @@
 
             );
         }
+
+        [TestMethod]
+        public void HaackedWithWikipedia()
+        {
+            CustomAssert.IsTrue(
+                EmailAddressValidator.Haacked.IsValid,
+                Examples.Valid,
+
+                // False negatives:
+                new[]
+                {
+                    @"""()<>[]:,;@\\""!#$%&'*+-/=?^_`{}| ~.a""@example.org",
+                    @"""very.(),:;<>[]\"".VERY.\""very@\ \""very\"".unusual""@strange.example.com",
+                    @"admin@mailserver1",
+                    @"üñîçøðé@example.com",
+                    @"üñîçøðé@üñîçøðé.com",
+                }
+
+            );
+
+            CustomAssert.IsFalse(EmailAddressValidator.Haacked.IsValid, Examples.Invalid);
+        }
     }
 }

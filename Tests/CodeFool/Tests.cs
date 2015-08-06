@@ -77,5 +77,39 @@
 
             );
         }
+
+        [TestMethod]
+        public void HaackedWithCodeFool()
+        {
+            CustomAssert.IsTrue(
+                EmailAddressValidator.Haacked.IsValid,
+                Examples.Valid,
+                
+                // False negatives:
+                new[]
+                {
+                    @"email@123.123.123.123",
+                    @"email@[123.123.123.123]",
+                    @"much.“more\ unusual”@example.com",
+                    @"very.unusual.“@”.unusual.com@example.com",
+                    @"very.“(),:;<>[]”.VERY.“very@\ ""very”.unusual@strange.example.com",
+                    @"“email”@example.com",
+                }
+
+            );
+
+            CustomAssert.IsFalse(
+                EmailAddressValidator.Haacked.IsValid,
+                Examples.Invalid,
+            
+                // False positives:
+                new[]
+                {
+                    @"@example.com",
+                    @"email@example.web",
+                }
+
+            );
+        }
     }
 }

@@ -72,5 +72,41 @@
 
             );
         }
+
+        [TestMethod]
+        public void HaackedWithSembianceEmailValidator()
+        {
+            CustomAssert.IsTrue(
+                EmailAddressValidator.Haacked.IsValid,
+                Examples.Valid,
+
+                // False negatives:
+                new[]
+                {
+                    @"""\e\s\c\a\p\e\d""@sld.com",
+                    @"""back\slash""@sld.com",
+                    @"bracketed-IP-instead-of-domain@[127.0.0.1]",
+                    @"one-letter-sld@x.org",
+                    @"punycode-numbers-in-tld@sld.xn--3e0b707e",
+                    @"single-character-in-sld@x.org",
+                }
+
+            );
+
+            CustomAssert.IsFalse(
+                EmailAddressValidator.Haacked.IsValid,
+                Examples.Invalid,
+
+                // False positives:
+                new[]
+                {
+                    @"@missing-local.org",
+                    @"the-character-limit@for-each-part.of-the-domain.is-sixty-three-characters.this-is-exactly-sixty-four-characters-so-it-is-invalid-blah-blah.com",
+                    @"the-local-part-is-invalid-if-it-is-longer-than-sixty-four-characters@sld.net",
+                    @"the-total-length@of-an-entire-address.cannot-be-longer-than-two-hundred-and-fifty-four-characters.and-this-address-is-255-characters-exactly.so-it-should-be-invalid.and-im-going-to-add-some-more-words-here.to-increase-the-lenght-blah-blah-blah-blah-bl.org",
+                }
+
+            );
+        }
     }
 }

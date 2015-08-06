@@ -1,4 +1,4 @@
-﻿namespace EmailAddressValidation
+﻿namespace EmailAddressValidation.Implementations
 {
     using System;
     using System.Globalization;

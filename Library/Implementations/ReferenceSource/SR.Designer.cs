@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EmailAddressValidation.ReferenceSource {
+namespace EmailAddressValidation.Implementations.ReferenceSource {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace EmailAddressValidation.ReferenceSource {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("EmailAddressValidation.ReferenceSource.SR", typeof(SR).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("EmailAddressValidation.Implementations.ReferenceSource.SR", typeof(SR).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
