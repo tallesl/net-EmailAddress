@@ -38,7 +38,6 @@ False negatives:
 * Reference Source:
   [1][refsrc-negatives-1]
   [2][refsrc-negatives-2]
-  [3][refsrc-negatives-3]
 * Haacked:
   [1][haack-negatives-1]
   [2][haack-negatives-2]
@@ -53,9 +52,8 @@ False positives:
   [1][refsrc-positives-1]
   [2][refsrc-positives-2]
 * Haacked:
-  [1][refsrc-positives-1]
-  [2][refsrc-positives-2]
-  [3][refsrc-positives-3]
+  [1][haack-positives-1]
+  [2][haack-positives-2]
 
 [msdn-negatives-1]: Tests/CodeFool/Tests.cs#L18-L22
 [msdn-negatives-2]: Tests/SembianceEmailValidator/Tests.cs#L18-L20
