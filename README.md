@@ -75,11 +75,10 @@ False positives:
 
 ## Reference Source
 
-The code was borrowed from [Reference Source] with some mild adaptations.
-Here's what I did:
+Here's what I did with the Reference Source implementation:
 
 1. [Downloaded Reference Source]&nbsp;(version 4.5.2)
-1. Copied [MailAddressParser.cs] and its dependencies
+1. Copied [MailAddressParser.cs] and its dependencies:
  * [DomainLiteralReader.cs]
  * [DotAtomReader.cs]
  * [QuotedPairReader.cs]
@@ -95,7 +94,6 @@ Here's what I did:
  * Created a resource named `SR` from [`corefx/src/System.Net.Http/src/Resources/Strings.resx`][Strings.resx]
  * Replaced `SR.GetString` for `string.Format`
 
-[Reference Source]:            http://referencesource.microsoft.com
 [Downloaded Reference Source]: http://referencesource.microsoft.com/download.html
 [MailAddressParser.cs]:        http://referencesource.microsoft.com/#System/net/System/Net/mail/MailAddressParser.cs
 [DomainLiteralReader.cs]:      http://referencesource.microsoft.com/#System/net/System/Net/mail/DomainLiteralReader.cs
