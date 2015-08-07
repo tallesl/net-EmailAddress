@@ -6,7 +6,7 @@
 [MSDN], [Reference Source] and [Phil Haack's] implementations on email address validation.
 
 [MSDN]:             https://msdn.microsoft.com/library/01escwtf%28v=vs.100%29.aspx
-[Reference Source]: http://referencesource.microsoft.com
+[Reference Source]: http://referencesource.microsoft.com/#System/net/System/Net/mail/MailAddressParser.cs
 [Phil Haack's]:     http://haacked.com/archive/2007/08/21/i-knew-how-to-validate-an-email-address-until-i.aspx
 
 [build]:     https://ci.appveyor.com/project/TallesL/EmailAddressValidator
@@ -84,7 +84,6 @@ Here's what I did:
 1. Copied [MailAddressParser.cs] and its dependencies
  * [DomainLiteralReader.cs]
  * [DotAtomReader.cs]
- * [MailAddressParser.cs]
  * [QuotedPairReader.cs]
  * [QuotedStringFormatReader.cs]
  * [WhitespaceReader.cs]
