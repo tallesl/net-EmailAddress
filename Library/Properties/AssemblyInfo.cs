@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("EmailAddressValidator")]
+[assembly: AssemblyTitle("EmailAddress")]
 [assembly: AssemblyDescription("Multiple implementations on email address validation.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]

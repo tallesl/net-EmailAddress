@@ -1,4 +1,4 @@
-﻿namespace EmailAddressValidation.Tests.Wikipedia
+﻿namespace EmailAddressLibrary.Tests.Wikipedia
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 

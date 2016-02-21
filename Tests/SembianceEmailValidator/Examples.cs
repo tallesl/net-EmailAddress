@@ -1,4 +1,4 @@
-﻿namespace EmailAddressValidation.Tests.SembianceEmailValidator
+﻿namespace EmailAddressLibrary.Tests.SembianceEmailValidator
 {
     using System.Collections.Generic;
 

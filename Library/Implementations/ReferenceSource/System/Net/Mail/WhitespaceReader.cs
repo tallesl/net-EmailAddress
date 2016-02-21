@@ -11,9 +11,9 @@ using System.Globalization;
 using System.Collections;
 using System.Diagnostics;
 
-namespace EmailAddressValidation.Implementations.ReferenceSource.System.Net.Mail
+namespace EmailAddressLibrary.Implementations.ReferenceSource.System.Net.Mail
 {
-    using EmailAddressValidation.Implementations.ReferenceSource.System.Net.Mime;
+    using EmailAddressLibrary.Implementations.ReferenceSource.System.Net.Mime;
 
     // FWS, CFWS, and Comments are defined in RFC 2822 section 3.2.3.
     //

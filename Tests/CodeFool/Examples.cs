@@ -1,4 +1,4 @@
-﻿namespace EmailAddressValidation.Tests.CodeFool
+﻿namespace EmailAddressLibrary.Tests.CodeFool
 {
     using System.Collections.Generic;
 

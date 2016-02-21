@@ -1,7 +1,7 @@
-﻿namespace EmailAddressValidation
+﻿namespace EmailAddressLibrary
 {
-    using EmailAddressValidation.Implementations;
-    using EmailAddressValidation.Implementations.ReferenceSource.System.Net.Mail;
+    using EmailAddressLibrary.Implementations;
+    using EmailAddressLibrary.Implementations.ReferenceSource.System.Net.Mail;
     using System;
 
     public static class EmailAddressValidator

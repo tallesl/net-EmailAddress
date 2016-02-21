@@ -1,4 +1,4 @@
-﻿namespace EmailAddressValidation.Tests.SembianceEmailValidator
+﻿namespace EmailAddressLibrary.Tests.SembianceEmailValidator
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 

@@ -9,9 +9,9 @@ using System.Diagnostics;
 using System.Net.Mime;
 using System.Text;
 
-namespace EmailAddressValidation.Implementations.ReferenceSource.System.Net.Mail
+namespace EmailAddressLibrary.Implementations.ReferenceSource.System.Net.Mail
 {
-    using EmailAddressValidation.Implementations.ReferenceSource.System.Net.Mime;
+    using EmailAddressLibrary.Implementations.ReferenceSource.System.Net.Mime;
 
     //
     // RFC 2822 Section 3.2.4 - Atom, Dot-Atom

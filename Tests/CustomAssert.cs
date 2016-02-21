@@ -1,4 +1,4 @@
-﻿namespace EmailAddressValidation.Tests
+﻿namespace EmailAddressLibrary.Tests
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System;

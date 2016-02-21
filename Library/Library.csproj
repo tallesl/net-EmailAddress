@@ -8,8 +8,8 @@
     <ProjectGuid>{8A19FB26-024C-408E-BAAA-F0102AA8E529}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EmailAddressValidation</RootNamespace>
-    <AssemblyName>EmailAddressValidator</AssemblyName>
+    <RootNamespace>EmailAddressLibrary</RootNamespace>
+    <AssemblyName>EmailAddress</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -29,7 +29,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\EmailAddressValidator.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\EmailAddress.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

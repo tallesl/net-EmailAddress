@@ -11,7 +11,7 @@ using System.Globalization;
 using System.Collections.Generic;
 using System.Diagnostics;
 
-namespace EmailAddressValidation.Implementations.ReferenceSource.System.Net.Mime
+namespace EmailAddressLibrary.Implementations.ReferenceSource.System.Net.Mime
 {
     internal static class MailBnfHelper
     {

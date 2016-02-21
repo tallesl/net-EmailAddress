@@ -9,8 +9,8 @@
     <ProjectGuid>{6185453E-EAC3-49EC-9BB0-25ACD9205E6F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EmailAddressValidation.Tests</RootNamespace>
-    <AssemblyName>EmailAddressValidator.Tests</AssemblyName>
+    <RootNamespace>EmailAddress.Tests</RootNamespace>
+    <AssemblyName>EmailAddress.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
