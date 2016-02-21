@@ -7,62 +7,44 @@
     public static class EmailAddressValidator
     {
         /// <summary>
-        /// MSDN implementation.
+        /// Checks if the given email address is valid using MSDN implementation.
         /// https://msdn.microsoft.com/library/01escwtf%28v=vs.100%29.aspx
         /// </summary>
-        public static class Msdn
+        /// <param name="address">Email address to check</param>
+        /// <returns>True if the given email address is valid, false otherwise</returns>
+        public static bool Msdn(string address)
         {
-            /// <summary>
-            /// Checks if the given email address is valid using MSDN implementation.
-            /// </summary>
-            /// <param name="address">Email address to check</param>
-            /// <returns>True if the given email address is valid, false otherwise</returns>
-            public static bool IsValid(string address)
-            {
-                return RegexUtilities.IsValidEmail(address);
-            }
+            return RegexUtilities.IsValidEmail(address);
         }
 
         /// <summary>
-        /// Reference Source implementation.
+        /// Checks if the given email address is valid using Reference Source implementation.
         /// http://referencesource.microsoft.com
         /// </summary>
-        public static class ReferenceSource
+        /// <param name="address">Email address to check</param>
+        /// <returns>True if the given email address is valid, false otherwise</returns>
+        public static bool ReferenceSource(string address)
         {
-            /// <summary>
-            /// Checks if the given email address is valid using Reference Source implementation.
-            /// </summary>
-            /// <param name="address">Email address to check</param>
-            /// <returns>True if the given email address is valid, false otherwise</returns>
-            public static bool IsValid(string address)
+            try
             {
-                try
-                {
-                    MailAddressParser.ParseAddress(address);
-                    return true;
-                }
-                catch (FormatException)
-                {
-                    return false;
-                }
+                MailAddressParser.ParseAddress(address);
+                return true;
+            }
+            catch (FormatException)
+            {
+                return false;
             }
         }
 
         /// <summary>
-        /// Phil Haack's regex.
+        /// Checks if the given email address is valid using Phil Haack's implementation.
         /// http://haacked.com/archive/2007/08/21/i-knew-how-to-validate-an-email-address-until-i.aspx
         /// </summary>
-        public static class Haacked
+        /// <param name="address">Email address to check</param>
+        /// <returns>True if the given email address is valid, false otherwise</returns>
+        public static bool Haacked(string address)
         {
-            /// <summary>
-            /// Checks if the given email address is valid using Phil Haack's implementation.
-            /// </summary>
-            /// <param name="address">Email address to check</param>
-            /// <returns>True if the given email address is valid, false otherwise</returns>
-            public static bool IsValid(string address)
-            {
-                return HaackedRegex.Regex.IsMatch(address);
-            }
+            return HaackedRegex.Regex.IsMatch(address);
         }
     }
 }

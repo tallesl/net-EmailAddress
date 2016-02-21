@@ -9,7 +9,7 @@
         public void MsdnWithSembianceEmailValidator()
         {
             CustomAssert.IsTrue(
-                EmailAddressValidator.Msdn.IsValid,
+                EmailAddressValidator.Msdn,
                 Examples.Valid,
 
                 // False negatives:
@@ -22,7 +22,7 @@
             );
 
             CustomAssert.IsFalse(
-                EmailAddressValidator.Msdn.IsValid,
+                EmailAddressValidator.Msdn,
                 Examples.Invalid,
 
                 // False positives:
@@ -43,12 +43,12 @@
         public void ReferenceSourceWithSebianceEmailValidator()
         {
             CustomAssert.IsTrue(
-                EmailAddressValidator.ReferenceSource.IsValid,
+                EmailAddressValidator.ReferenceSource,
                 Examples.Valid
             );
 
             CustomAssert.IsFalse(
-                EmailAddressValidator.ReferenceSource.IsValid,
+                EmailAddressValidator.ReferenceSource,
                 Examples.Invalid,
 
                 // False positives:
@@ -77,7 +77,7 @@
         public void HaackedWithSembianceEmailValidator()
         {
             CustomAssert.IsTrue(
-                EmailAddressValidator.Haacked.IsValid,
+                EmailAddressValidator.Haacked,
                 Examples.Valid,
 
                 // False negatives:
@@ -94,7 +94,7 @@
             );
 
             CustomAssert.IsFalse(
-                EmailAddressValidator.Haacked.IsValid,
+                EmailAddressValidator.Haacked,
                 Examples.Invalid,
 
                 // False positives:

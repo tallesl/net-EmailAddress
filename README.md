@@ -24,9 +24,9 @@
 ```cs
 using EmailAddressLibrary;
 
-EmailAddressValidator.Msdn.IsValid("foo@bar.com");
-EmailAddressValidator.ReferenceSource.IsValid("foo@bar.com");
-EmailAddressValidator.Haacked.IsValid("foo@bar.com");
+EmailAddressValidator.Msdn("foo@bar.com");            // True
+EmailAddressValidator.ReferenceSource("foo@bar.com"); // True
+EmailAddressValidator.Haacked("foo@bar.com");         // True
 ```
 
 ## Word of warning

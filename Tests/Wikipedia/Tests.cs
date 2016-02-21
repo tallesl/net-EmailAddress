@@ -9,7 +9,7 @@
         public void MsdnWithWikipedia()
         {
             CustomAssert.IsTrue(
-                EmailAddressValidator.Msdn.IsValid,
+                EmailAddressValidator.Msdn,
                 Examples.Valid,
 
                 // False negatives:
@@ -27,7 +27,7 @@
             );
 
             CustomAssert.IsFalse(
-                EmailAddressValidator.Msdn.IsValid,
+                EmailAddressValidator.Msdn,
                 Examples.Invalid
             );
         }
@@ -36,7 +36,7 @@
         public void ReferenceSourceWithWikipedia()
         {
             CustomAssert.IsTrue(
-                EmailAddressValidator.ReferenceSource.IsValid,
+                EmailAddressValidator.ReferenceSource,
                 Examples.Valid,
 
                 // False negatives:
@@ -49,7 +49,7 @@
             );
 
             CustomAssert.IsFalse(
-                EmailAddressValidator.ReferenceSource.IsValid,
+                EmailAddressValidator.ReferenceSource,
                 Examples.Invalid,
 
                 // False positives:
@@ -68,7 +68,7 @@
         public void HaackedWithWikipedia()
         {
             CustomAssert.IsTrue(
-                EmailAddressValidator.Haacked.IsValid,
+                EmailAddressValidator.Haacked,
                 Examples.Valid,
 
                 // False negatives:
@@ -84,7 +84,7 @@
             );
 
             CustomAssert.IsFalse(
-                EmailAddressValidator.Haacked.IsValid,
+                EmailAddressValidator.Haacked,
                 Examples.Invalid
             );
         }
