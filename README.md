@@ -1,3 +1,9 @@
+<p align="center">
+    <a href="#emailaddressvalidator">
+        <img alt="logo" src="Assets/logo-200x200.png">
+    </a>
+</p>
+
 # EmailAddressValidator
 
 [![][build-img]][build]
