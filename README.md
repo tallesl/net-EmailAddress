@@ -125,7 +125,7 @@ Okay, no package.
 That was a let down.
 
 [soup]:    https://youtube.com/watch?v=ryNxl-lpOME
-[invalid]: invalid.png
+[invalid]: Assets/invalid.png
 
 **[Fuck it, we'll do it live]**
 
