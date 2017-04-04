@@ -6,9 +6,28 @@ namespace EmailAddressLibrary.Implementations
     {
         const string AtomCharacters = "!#$%&'*+-/=?^_`{|}~";
 
+        [Flags]
+        enum SubDomainType
+        {
+            None = 0,
+            Alphabetic = 1,
+            Numeric = 2,
+            AlphaNumeric = 3
+        }
+
+        static bool IsDigit(char c)
+        {
+            return (c >= '0' && c <= '9');
+        }
+
+        static bool IsLetter(char c)
+        {
+            return (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z');
+        }
+
         static bool IsLetterOrDigit(char c)
         {
-            return (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9');
+            return IsLetter(c) || IsDigit(c);
         }
 
         static bool IsAtom(char c, bool allowInternational)
@@ -16,9 +35,64 @@ namespace EmailAddressLibrary.Implementations
             return c < 128 ? IsLetterOrDigit(c) || AtomCharacters.IndexOf(c) != -1 : allowInternational;
         }
 
-        static bool IsDomain(char c, bool allowInternational)
+        static bool IsDomain(char c, bool allowInternational, ref SubDomainType type)
         {
-            return c < 128 ? IsLetterOrDigit(c) || c == '-' : allowInternational;
+            if (c < 128)
+            {
+                if (IsLetter(c) || c == '-')
+                {
+                    type |= SubDomainType.Alphabetic;
+                    return true;
+                }
+
+                if (IsDigit(c))
+                {
+                    type |= SubDomainType.Numeric;
+                    return true;
+                }
+
+                return false;
+            }
+
+            if (allowInternational)
+            {
+                type |= SubDomainType.Alphabetic;
+                return true;
+            }
+
+            return false;
+        }
+
+        static bool IsDomainStart(char c, bool allowInternational, out SubDomainType type)
+        {
+            if (c < 128)
+            {
+                if (IsLetter(c))
+                {
+                    type = SubDomainType.Alphabetic;
+                    return true;
+                }
+
+                if (IsDigit(c))
+                {
+                    type = SubDomainType.Numeric;
+                    return true;
+                }
+
+                type = SubDomainType.None;
+
+                return false;
+            }
+
+            if (allowInternational)
+            {
+                type = SubDomainType.Alphabetic;
+                return true;
+            }
+
+            type = SubDomainType.None;
+
+            return false;
         }
 
         static bool SkipAtom(string text, ref int index, bool allowInternational)
@@ -31,16 +105,16 @@ namespace EmailAddressLibrary.Implementations
             return index > startIndex;
         }
 
-        static bool SkipSubDomain(string text, ref int index, bool allowInternational)
+        static bool SkipSubDomain(string text, ref int index, bool allowInternational, out SubDomainType type)
         {
             int startIndex = index;
 
-            if (!IsDomain(text[index], allowInternational) || text[index] == '-')
+            if (!IsDomainStart(text[index], allowInternational, out type))
                 return false;
 
             index++;
 
-            while (index < text.Length && IsDomain(text[index], allowInternational))
+            while (index < text.Length && IsDomain(text[index], allowInternational, ref type))
                 index++;
 
             return (index - startIndex) < 64 && text[index - 1] != '-';
@@ -48,7 +122,9 @@ namespace EmailAddressLibrary.Implementations
 
         static bool SkipDomain(string text, ref int index, bool allowTopLevelDomains, bool allowInternational)
         {
-            if (!SkipSubDomain(text, ref index, allowInternational))
+            SubDomainType type;
+
+            if (!SkipSubDomain(text, ref index, allowInternational, out type))
                 return false;
 
             if (index < text.Length && text[index] == '.')
@@ -60,7 +136,7 @@ namespace EmailAddressLibrary.Implementations
                     if (index == text.Length)
                         return false;
 
-                    if (!SkipSubDomain(text, ref index, allowInternational))
+                    if (!SkipSubDomain(text, ref index, allowInternational, out type))
                         return false;
                 } while (index < text.Length && text[index] == '.');
             }
@@ -68,6 +144,10 @@ namespace EmailAddressLibrary.Implementations
             {
                 return false;
             }
+
+            // top-level domains are all alphabetic-only
+            if (type != SubDomainType.Alphabetic)
+                return false;
 
             return true;
         }

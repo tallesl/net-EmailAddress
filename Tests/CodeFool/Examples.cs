@@ -13,7 +13,6 @@
             {
                 @"1234567890@example.com",
                 @"_______@example.com",
-                @"email@123.123.123.123",
                 @"email@[123.123.123.123]",
                 @"email@example-one.com",
                 @"email@example.co.jp",
@@ -53,6 +52,7 @@
                 @"plainaddress",
                 @"this\ is""really""not\allowed@example.com",
                 @"""(),:;<>[]@example.com",
+                @"email@123.123.123.123",
             };
     }
 }

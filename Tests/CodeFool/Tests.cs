@@ -33,6 +33,7 @@
                 new[]
                 {
                     @"email@111.222.333.44444",
+                    @"email@123.123.123.123",
                     @"email@example.web",
                 }
 
@@ -69,6 +70,7 @@
                     @"email.@example.com",
                     @"email@-example.com",
                     @"email@111.222.333.44444",
+                    @"email@123.123.123.123",
                     @"email@example",
                     @"email@example..com",
                     @"email@example.com (Joe Smith)",
@@ -136,7 +138,6 @@
                 new []
                 {
                     @"email@example",
-                    @"email@111.222.333.44444",
                     @"email@example.web",
                 }
 

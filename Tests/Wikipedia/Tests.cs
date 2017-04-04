@@ -99,7 +99,8 @@
                 // False negatives:
                 new[]
                 {
-                    @"""()<>[]:,;@\\""!#$%&'*+-/=?^_`{}| ~.a""@example.org"
+                    @"""()<>[]:,;@\\""!#$%&'*+-/=?^_`{}| ~.a""@example.org",
+                    @"admin@mailserver1"
                 }
             );
 
