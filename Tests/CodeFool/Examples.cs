@@ -28,6 +28,7 @@
                 @"very.unusual.""@"".unusual.com@example.com",
                 @"very.""(),:;<>[]"".VERY.""very@\ ""very"".unusual@strange.example.com",
                 @"""email""@example.com",
+                @"あいうえお@example.com",
             };
 
         internal static IEnumerable<string> Invalid =
@@ -52,7 +53,6 @@
                 @"plainaddress",
                 @"this\ is""really""not\allowed@example.com",
                 @"""(),:;<>[]@example.com",
-                @"あいうえお@example.com",
             };
     }
 }

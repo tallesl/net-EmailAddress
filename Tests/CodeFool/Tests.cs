@@ -20,6 +20,7 @@
                     @"very.unusual.""@"".unusual.com@example.com",
                     @"very.""(),:;<>[]"".VERY.""very@\ ""very"".unusual@strange.example.com",
                     @"""email""@example.com",
+                    @"あいうえお@example.com"
                 }
 
             );
@@ -72,7 +73,6 @@
                     @"email@example..com",
                     @"email@example.com (Joe Smith)",
                     @"email@example.web",
-                    @"あいうえお@example.com",
                 }
 
             );
@@ -94,6 +94,7 @@
                     @"very.unusual.""@"".unusual.com@example.com",
                     @"very.""(),:;<>[]"".VERY.""very@\ ""very"".unusual@strange.example.com",
                     @"""email""@example.com",
+                    @"あいうえお@example.com"
                 }
 
             );
@@ -137,7 +138,6 @@
                     @"email@example",
                     @"email@111.222.333.44444",
                     @"email@example.web",
-                    @"あいうえお@example.com"
                 }
 
             );
