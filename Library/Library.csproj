@@ -36,6 +36,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EmailAddressValidator.cs" />
+    <Compile Include="Implementations\JStedfast.cs" />
     <Compile Include="Implementations\Haacked.cs" />
     <Compile Include="Implementations\Msdn.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

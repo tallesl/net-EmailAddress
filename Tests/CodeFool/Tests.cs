@@ -16,10 +16,10 @@
                 new[]
                 {
                     @"_______@example.com",
-                    @"much.“more\ unusual”@example.com",
-                    @"very.unusual.“@”.unusual.com@example.com",
-                    @"very.“(),:;<>[]”.VERY.“very@\ ""very”.unusual@strange.example.com",
-                    @"“email”@example.com",
+                    @"much.""more\ unusual""@example.com",
+                    @"very.unusual.""@"".unusual.com@example.com",
+                    @"very.""(),:;<>[]"".VERY.""very@\ ""very"".unusual@strange.example.com",
+                    @"""email""@example.com",
                 }
 
             );
@@ -48,9 +48,9 @@
                 // False negatives:
                 new[]
                 {
-                    @"much.“more\ unusual”@example.com",
-                    @"very.unusual.“@”.unusual.com@example.com",
-                    @"very.“(),:;<>[]”.VERY.“very@\ ""very”.unusual@strange.example.com",
+                    @"much.""more\ unusual""@example.com",
+                    @"very.unusual.""@"".unusual.com@example.com",
+                    @"very.""(),:;<>[]"".VERY.""very@\ ""very"".unusual@strange.example.com",
                 }
 
             );
@@ -90,10 +90,10 @@
                 {
                     @"email@123.123.123.123",
                     @"email@[123.123.123.123]",
-                    @"much.“more\ unusual”@example.com",
-                    @"very.unusual.“@”.unusual.com@example.com",
-                    @"very.“(),:;<>[]”.VERY.“very@\ ""very”.unusual@strange.example.com",
-                    @"“email”@example.com",
+                    @"much.""more\ unusual""@example.com",
+                    @"very.unusual.""@"".unusual.com@example.com",
+                    @"very.""(),:;<>[]"".VERY.""very@\ ""very"".unusual@strange.example.com",
+                    @"""email""@example.com",
                 }
 
             );
@@ -107,6 +107,37 @@
                 {
                     @"@example.com",
                     @"email@example.web",
+                }
+
+            );
+        }
+
+        [TestMethod]
+        public void JStedfastWithCodeFool()
+        {
+            CustomAssert.IsTrue(
+                EmailAddressValidator.JStedfast,
+                Examples.Valid,
+
+                // False negatives:
+                new []
+                {
+                    @"very.""(),:;<>[]"".VERY.""very@\ ""very"".unusual@strange.example.com"
+                }
+
+            );
+
+            CustomAssert.IsFalse(
+                EmailAddressValidator.JStedfast,
+                Examples.Invalid,
+
+                // False positives:
+                new []
+                {
+                    @"email@example",
+                    @"email@111.222.333.44444",
+                    @"email@example.web",
+                    @"あいうえお@example.com"
                 }
 
             );

@@ -88,5 +88,25 @@
                 Examples.Invalid
             );
         }
+
+        [TestMethod]
+        public void JStedfastWithWikipedia()
+        {
+            CustomAssert.IsTrue(
+                EmailAddressValidator.JStedfast,
+                Examples.Valid,
+
+                // False negatives:
+                new[]
+                {
+                    @"""()<>[]:,;@\\""!#$%&'*+-/=?^_`{}| ~.a""@example.org"
+                }
+            );
+
+            CustomAssert.IsFalse(
+                EmailAddressValidator.JStedfast,
+                Examples.Invalid
+            );
+        }
     }
 }

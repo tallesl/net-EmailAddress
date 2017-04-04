@@ -46,5 +46,16 @@
         {
             return HaackedRegex.Regex.IsMatch(address);
         }
+
+        /// <summary>
+        /// Checks if the given email address is valid using Jeffrey Stedfast's implementation.
+        /// https://github.com/jstedfast/EmailValidation
+        /// </summary>
+        /// <param name="address">Email address to check</param>
+        /// <returns>True if the given email address is valid, false otherwise</returns>
+        public static bool JStedfast(string address)
+        {
+            return JStedfastValidator.Validate(address, true, true);
+        }
     }
 }

@@ -24,10 +24,10 @@
                 @"firstname+lastname@example.com",
                 @"firstname-lastname@example.com",
                 @"firstname.lastname@example.com",
-                @"much.“more\ unusual”@example.com",
-                @"very.unusual.“@”.unusual.com@example.com",
-                @"very.“(),:;<>[]”.VERY.“very@\ ""very”.unusual@strange.example.com",
-                @"“email”@example.com",
+                @"much.""more\ unusual""@example.com",
+                @"very.unusual.""@"".unusual.com@example.com",
+                @"very.""(),:;<>[]"".VERY.""very@\ ""very"".unusual@strange.example.com",
+                @"""email""@example.com",
             };
 
         internal static IEnumerable<string> Invalid =
@@ -51,7 +51,7 @@
                 @"just""not""right@example.com",
                 @"plainaddress",
                 @"this\ is""really""not\allowed@example.com",
-                @"“(),:;<>[]@example.com",
+                @"""(),:;<>[]@example.com",
                 @"あいうえお@example.com",
             };
     }
