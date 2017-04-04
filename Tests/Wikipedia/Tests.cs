@@ -19,7 +19,6 @@
                     @"""very.(),:;<>[]\"".VERY.\""very@\ \""very\"".unusual""@strange.example.com",
                     @"""very.unusual.@.unusual.com""@example.com",
                     @"#!$%&'*+-/=?^_`{}|~@example.org",
-                    @"admin@mailserver1",
                     @"üñîçøðé@example.com",
                     @"üñîçøðé@üñîçøðé.com",
                 }
@@ -74,7 +73,6 @@
                 new[]
                 {
                     @"""very.(),:;<>[]\"".VERY.\""very@\ \""very\"".unusual""@strange.example.com",
-                    @"admin@mailserver1",
                     @"üñîçøðé@example.com",
                     @"üñîçøðé@üñîçøðé.com",
                 }
@@ -92,13 +90,7 @@
         {
             CustomAssert.IsTrue(
                 EmailAddressValidator.JStedfast,
-                Examples.Valid,
-
-                // False negatives:
-                new[]
-                {
-                    @"admin@mailserver1"
-                }
+                Examples.Valid
             );
 
             CustomAssert.IsFalse(
