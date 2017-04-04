@@ -119,7 +119,6 @@
                 // False negatives:
                 new []
                 {
-                    @"the-total-length@of-an-entire-address.cannot-be-longer-than-two-hundred-and-fifty-four-characters.and-this-address-is-255-characters-exactly.so-it-should-be-invalid.and-im-going-to-add-some-more-words-here.to-increase-the-lenght-blah-blah-blah-blah-bl.org",
                     @"punycode-numbers-in-tld@sld.xn--3e0b707e",
                 }
 

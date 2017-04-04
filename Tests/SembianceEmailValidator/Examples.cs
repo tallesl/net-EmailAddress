@@ -34,7 +34,6 @@
                 @"punycode-numbers-in-tld@sld.xn--3e0b707e",
                 @"single-character-in-sld@x.org",
                 @"the-character-limit@for-each-part.of-the-domain.is-sixty-three-characters.this-is-exactly-sixty-three-characters-so-it-is-valid-blah-blah.com",
-                @"the-total-length@of-an-entire-address.cannot-be-longer-than-two-hundred-and-fifty-four-characters.and-this-address-is-255-characters-exactly.so-it-should-be-invalid.and-im-going-to-add-some-more-words-here.to-increase-the-lenght-blah-blah-blah-blah-bl.org",
                 @"uncommon-tld@sld.mobi",
                 @"uncommon-tld@sld.museum",
                 @"uncommon-tld@sld.travel",
