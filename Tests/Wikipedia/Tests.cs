@@ -15,7 +15,7 @@
                 // False negatives:
                 new[]
                 {
-                    @"""()<>[]:,;@\\""!#$%&'*+-/=?^_`{}| ~.a""@example.org",
+                    @"""()<>[]:,;@\""!#$%&'*+-/=?^_`{}| ~.a""@example.org",
                     @"""very.(),:;<>[]\"".VERY.\""very@\ \""very\"".unusual""@strange.example.com",
                     @"""very.unusual.@.unusual.com""@example.com",
                     @"#!$%&'*+-/=?^_`{}|~@example.org",

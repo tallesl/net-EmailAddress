@@ -12,7 +12,7 @@
             new[]
             {
                 @""" ""@example.org",
-                @"""()<>[]:,;@\\""!#$%&'*+-/=?^_`{}| ~.a""@example.org",
+                @"""()<>[]:,;@\""!#$%&'*+-/=?^_`{}| ~.a""@example.org",
                 @"""much.more unusual""@example.com",
                 @"""very.(),:;<>[]\"".VERY.\""very@\ \""very\"".unusual""@strange.example.com",
                 @"""very.unusual.@.unusual.com""@example.com",
