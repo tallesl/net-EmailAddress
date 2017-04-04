@@ -16,8 +16,6 @@
                 new[]
                 {
                     @"_______@example.com",
-                    @"much.""more\ unusual""@example.com",
-                    @"very.unusual.""@"".unusual.com@example.com",
                     @"""email""@example.com",
                     @"あいうえお@example.com"
                 }
@@ -43,15 +41,7 @@
         {
             CustomAssert.IsTrue(                
                 EmailAddressValidator.ReferenceSource,
-                Examples.Valid,
-
-                // False negatives:
-                new[]
-                {
-                    @"much.""more\ unusual""@example.com",
-                    @"very.unusual.""@"".unusual.com@example.com",
-                }
-
+                Examples.Valid
             );
 
             CustomAssert.IsFalse(
@@ -88,8 +78,6 @@
                 {
                     @"email@123.123.123.123",
                     @"email@[123.123.123.123]",
-                    @"much.""more\ unusual""@example.com",
-                    @"very.unusual.""@"".unusual.com@example.com",
                     @"""email""@example.com",
                     @"あいうえお@example.com"
                 }

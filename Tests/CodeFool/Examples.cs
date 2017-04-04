@@ -23,8 +23,6 @@
                 @"firstname+lastname@example.com",
                 @"firstname-lastname@example.com",
                 @"firstname.lastname@example.com",
-                @"much.""more\ unusual""@example.com",
-                @"very.unusual.""@"".unusual.com@example.com",
                 @"""email""@example.com",
                 @"あいうえお@example.com",
             };

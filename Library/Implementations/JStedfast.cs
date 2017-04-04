@@ -332,21 +332,29 @@ namespace EmailAddressLibrary.Implementations
             if (email.Length == 0 || email.Length >= 255)
                 return false;
 
-            if (!SkipWord(email, ref index, allowInternational) || index >= email.Length)
-                return false;
-
-            while (email[index] == '.')
+            if (email[index] == '"')
             {
-                index++;
-
-                if (index >= email.Length)
+                if (!SkipQuoted(email, ref index, allowInternational) || index >= email.Length)
+                    return false;
+            }
+            else
+            {
+                if (!SkipAtom(email, ref index, allowInternational) || index >= email.Length)
                     return false;
 
-                if (!SkipWord(email, ref index, allowInternational))
-                    return false;
+                while (email[index] == '.')
+                {
+                    index++;
 
-                if (index >= email.Length)
-                    return false;
+                    if (index >= email.Length)
+                        return false;
+
+                    if (!SkipAtom(email, ref index, allowInternational))
+                        return false;
+
+                    if (index >= email.Length)
+                        return false;
+                }
             }
 
             if (index + 1 >= email.Length || index > 64 || email[index++] != '@')

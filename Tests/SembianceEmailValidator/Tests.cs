@@ -126,14 +126,7 @@
 
             CustomAssert.IsFalse(
                 EmailAddressValidator.JStedfast,
-                Examples.Invalid,
-
-                // False positives:
-                new []
-                {
-                    @"partially.""quoted""@sld.com",
-                }
-
+                Examples.Invalid
             );
         }
     }
