@@ -131,7 +131,6 @@
                 // False positives:
                 new []
                 {
-                    @"missing-dot-before-tld@com",
                     @"partially.""quoted""@sld.com",
                 }
 

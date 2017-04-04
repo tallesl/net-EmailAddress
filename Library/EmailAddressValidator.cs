@@ -55,7 +55,7 @@
         /// <returns>True if the given email address is valid, false otherwise</returns>
         public static bool JStedfast(string address)
         {
-            return JStedfastValidator.Validate(address, true, true);
+            return JStedfastValidator.Validate(address, false, true);
         }
     }
 }

@@ -119,14 +119,7 @@
 
             CustomAssert.IsFalse(
                 EmailAddressValidator.JStedfast,
-                Examples.Invalid,
-
-                // False positives:
-                new []
-                {
-                    @"email@example",
-                }
-
+                Examples.Invalid
             );
         }
     }
