@@ -42,7 +42,6 @@
                 // False negatives:
                 new[]
                 {
-                    @"""()<>[]:,;@\\""!#$%&'*+-/=?^_`{}| ~.a""@example.org",
                     @"""very.(),:;<>[]\"".VERY.\""very@\ \""very\"".unusual""@strange.example.com",
                 }
 
@@ -74,7 +73,6 @@
                 // False negatives:
                 new[]
                 {
-                    @"""()<>[]:,;@\\""!#$%&'*+-/=?^_`{}| ~.a""@example.org",
                     @"""very.(),:;<>[]\"".VERY.\""very@\ \""very\"".unusual""@strange.example.com",
                     @"admin@mailserver1",
                     @"üñîçøðé@example.com",
