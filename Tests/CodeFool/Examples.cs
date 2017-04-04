@@ -46,7 +46,6 @@
                 @"email@example",
                 @"email@example..com",
                 @"email@example.com (Joe Smith)",
-                @"email@example.web",
                 @"email@example@example.com",
                 @"just""not""right@example.com",
                 @"plainaddress",
