@@ -9,7 +9,7 @@
 [![][build-img]][build]
 [![][nuget-img]][nuget]
 
-[MSDN], [Reference Source] and [Phil Haack's] implementations on email address validation.
+[MSDN], [Reference Source], [Phil Haack] and [JStedfast] implementations on email address validation.
 
 [build]:            https://ci.appveyor.com/project/TallesL/net-emailaddress
 [build-img]:        https://ci.appveyor.com/api/projects/status/github/tallesl/net-emailaddress?svg=true
@@ -17,7 +17,8 @@
 [nuget-img]:        https://badge.fury.io/nu/EmailAddress.svg
 [MSDN]:             https://msdn.microsoft.com/library/01escwtf
 [Reference Source]: http://referencesource.microsoft.com/#System/net/System/Net/mail/MailAddressParser.cs
-[Phil Haack's]:     http://haacked.com/archive/2007/08/21/i-knew-how-to-validate-an-email-address-until-i.aspx
+[Phil Haack]:       http://haacked.com/archive/2007/08/21/i-knew-how-to-validate-an-email-address-until-i.aspx
+[JStedfast]:        https://github.com/jstedfast/EmailValidation
 
 ## Usage
 
@@ -27,6 +28,7 @@ using EmailAddressLibrary;
 EmailAddressValidator.Msdn("foo@bar.com");            // True
 EmailAddressValidator.ReferenceSource("foo@bar.com"); // True
 EmailAddressValidator.Haacked("foo@bar.com");         // True
+EmailAddressValidator.JStedfast("foo@bar.com");       // True
 ```
 
 ## Word of warning
@@ -223,9 +225,8 @@ But that's just me being picky.
 So there's a [second issue].
 Yep, validating email address is a lost battle.
 
-So in this (last) version I've put three implementations for you to choose, the first one (MSDN), the second one
-(Reference Source) and also [Phil Haack's one].
+So in this (last) version I've put several implementations for you to choose, the first one (MSDN), the second one
+(Reference Source) and also [Phil Haack] and [JStedfast] implementations.
 
 [Strike three, I'm out]: https://github.com/tallesl/EmailAddressValidator/releases/tag/3.0.0
 [second issue]:          https://github.com/tallesl/EmailAddressValidator/issues/2
-[Phil Haack's one]:      http://haacked.com/archive/2007/08/21/i-knew-how-to-validate-an-email-address-until-i.aspx
